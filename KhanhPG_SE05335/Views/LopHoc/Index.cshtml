@@ -1,0 +1,49 @@
+﻿@model IEnumerable<KhanhPG_SE05335.Models.Lophoc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action="RollBack">RollBack</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Khoa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Khoa)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { malop = item.MaLop }) |
+                    @Html.ActionLink("Details", "Details", new { malop = item.MaLop }) |
+                    @Html.ActionLink("Delete", "Delete", new { malop = item.MaLop })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
